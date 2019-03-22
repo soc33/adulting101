@@ -2,7 +2,7 @@ body {
   margin: auto;
   font-family: 'Lalezar', cursive;
   color: black;
-  background-image: url("../../assets/images/back.jpg");
+  background-image: url("../../public/images/back.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -22,6 +22,15 @@ body {
 /* index page */
 #exampleInputEmail1{
 width: 325px;
+}
+
+.form-group{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.title{
+  font-weight: 800;
 }
 
 /* index and user page */
