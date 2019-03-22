@@ -34,7 +34,7 @@ module.exports = function (app) {
         // for loop is ok through quizzes object 
         res.render("index", {
           
-      }
+      });
       });
 });
 
