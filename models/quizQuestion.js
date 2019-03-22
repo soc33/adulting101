@@ -56,13 +56,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 300]
       }
     },
-    sawIt: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     },
-    gotItRight: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     }
   });
 
