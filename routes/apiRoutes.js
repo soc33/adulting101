@@ -1,18 +1,18 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  app.get("/api/quiz", function(req, res) {
+  app.get("/api/quiz", function (req, res) {
     // pulling user scores for each quiz in order to dynamically create the quiz buttons
     db.quizScore
       .findAll({ where: { userId: req.user.id } })
-      .then(function(dbUserScores) {
+      .then(function (dbUserScores) {
         res.json(dbUserScores);
       });
   });
 
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", function (req, res) {
     console.log(req.body);
     db.user
       .create({
@@ -20,31 +20,23 @@ module.exports = function(app) {
         username: req.body.username,
         password: req.body.password
       })
-      .then(function() {
+      .then(function () {
         res.redirect(307, "/api/login");
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log(err);
         res.json(err);
         // res.status(422).json(err.errors[0].message);
       });
   });
 
-  app.get("/api/quiz/:id", function(req, res) {
-    db.quizQuestion
-      .findAll({ where: { quizId: req.params.id } })
-      .then(function(dbquizQuestions) {
-        res.json(dbquizQuestions);
-      });
-  });
-
   // this one may or may not work, needs to be tested! Different from example
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json("/members");
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json("/user");
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", function (req, res) {
     if (!req.user) {
       res.json({});
     } else {
@@ -56,8 +48,20 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/logout", function(req, res) {
+  app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
-};
+
+  app.get("/api/:score", function (req) {
+    db.quizScore.create(
+      {
+        score: req.params.score,
+        userId: req.user.id
+      }
+    ).then(function () {
+      window.location.href = "/user";
+    });
+  });
+
+}; 

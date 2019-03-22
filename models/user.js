@@ -1,6 +1,6 @@
-var bcrypt = require("bcrypt-nodejs");
+// var bcrypt = require("bcrypt-nodejs");
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var user = sequelize.define("user", {
     username: {
       type: DataTypes.STRING,
@@ -27,16 +27,21 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  user.prototype.validPassword = function(password) {
+  user.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
-  user.hook("beforeCreate", function(userInfo) {
-    user.password = bcrypt.hashSync(
-      userInfo.password,
-      bcrypt.genSaltSync(10),
-      null
-    );
-  });
+
+  user.prototype.encryptPassword = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+  }
+
+  // user.hook("beforeCreate", function(userInfo) {
+  //   user.password = bcrypt.hashSync(
+  //     userInfo.password,
+  //     bcrypt.genSaltSync(10),
+  //     // null
+  //   );
+  // });
 
   return user;
 };
