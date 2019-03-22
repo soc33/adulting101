@@ -1,0 +1,41 @@
+body {
+  margin: auto;
+  font-family: 'Lalezar', cursive;
+  color: black;
+  background-image: url("../../assets/images/back.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  background-position: center;
+}
+
+.jumbotron {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 80px;
+  padding: 0;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+
+/* index page */
+#exampleInputEmail1{
+width: 325px;
+}
+
+/* index and user page */
+#iconBtn {
+margin: auto;
+border: solid 1px black;
+}
+
+.box {
+background-color: transparent;
+border: none;
+}
+
+.list-group-item {
+line-height: 2.5;
+}
+

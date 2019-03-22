@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS adultingdb;
+CREATE DATABASE adultingdb;
+
