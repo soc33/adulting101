@@ -31,6 +31,15 @@ body {
   width: 325px;
 }
 
+.form-group{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.title{
+  font-weight: 800;
+}
+
 /* index and user page */
 #iconBtn {
   margin: auto;

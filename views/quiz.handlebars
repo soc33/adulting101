@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+
+          <div class="container2">
+            <h5 class="card-title">Example</h5>
+            <p>
+              <strong>QUESTION</strong>: {{question.id}}</p>
+            <p>
+              <form action="/" class="answers">
+                <input type="radio" name="gender" value="male"> <strong>{{answerOne}}</strong><br>
+                <input type="radio" name="gender" value="female"> <strong>{{answerTwo}}</strong><br>
+                <input type="radio" name="gender" value="other"> <strong>{{answerThree}}</strong><br>
+                <input type="radio" name="gender" value="other"> <strong>{{answerFour}}</strong><br><br>
+                <input type="submit" value="Submit">
+              </form>
+            </p>
+            
+          </div>
+          <br>
+            <button type="button" class="btn btn-primary" id="startOverBtn"><a href="/index">Home</a></button>
+            <button type="button" class="btn btn-primary" id="startNewQuizBtn"><a href="/index">Next Quiz</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>

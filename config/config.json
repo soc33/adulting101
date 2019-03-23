@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "password5",
     "database": "adultingdb",
     "host": "localhost",
     "dialect": "mysql"

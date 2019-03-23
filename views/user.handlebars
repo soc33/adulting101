@@ -1,59 +1,15 @@
 <div class="container">
-  <div class="col-sm-4">
-    <button class="box" id="1"><img class="w3-animate-zoom" src="assets/images/moneyButton2.jpg" id="iconBtn" width="200" height="175"></button>
-    <button class="box" id="2"><img class="w3-animate-zoom" src="assets/images/foodButton2.jpg" id="iconBtn" width="200" height="175"></button>
-    <button class="box" id="3"><img class="w3-animate-zoom" src="assets/images/fitnessButton2.jpg" id="iconBtn" width="200" height="175"></button>
-  </div>
-
-
   <div class="row">
     <div class="col-sm-4">
-      <button class="box" id="4"><img class="w3-animate-zoom" src="assets/images/carButton2.jpg" id="iconBtn" width="200" height="175"></button>
-      <button class="box" id="5"><img class="w3-animate-zoom" src="assets/images/houseButton2.jpg" id="iconBtn" width="200" height="175"></button>
-      <button class="box" id="6"><img class="w3-animate-zoom" src="assets/images/loveButton2.jpg" id="iconBtn" width="200" height="175"></button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <button class="box" id="7"><img class="w3-animate-zoom" src="assets/images/timeButton2.jpg" id="iconBtn" width="200" height="175"></button>
-      <button class="box" id="8"><img class="w3-animate-zoom" src="assets/images/workButton2.jpg" id="iconBtn" width="200" height="175"></button>
-      <button class="box" id="9"><img class="w3-animate-zoom" src="assets/images/clothesButton2.jpg" id="iconBtn" width="200" height="175"></button>
+      <ul>
+        {{#each}}
+          <button class="box" id="{{id}}"><img class="w3-animate-zoom" src="{{img}}" width="200" height="175">
+          </button>
+        {{/each}}
+      </ul>
     </div>
   </div>
 </div>
-
-<style>
-  body {
-    margin: auto;
-    font-family: 'Lalezar', cursive;
-    color: black;
-    background-image: url("./assets/images/back.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    text-align: center;
-    background-position: center;
-  }
-
-  .jumbotron-fluid {
-    background-color: transparent;
-  }
-
-  .box {
-    background-color: transparent;
-    border: none;
-  }
-
-  #iconBtn {
-    margin: auto;
-    border: solid 2px black;
-  }
-
-  /* animation section */
-
-
-</style>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
