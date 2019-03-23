@@ -27,7 +27,7 @@ $(document).ready(function() {
     $.post("/api/login", {
       username: username,
       password: password
-    })
+    }, null)
       .then(function(data) {
         window.location.replace(data);
         // If there's an error, log the error

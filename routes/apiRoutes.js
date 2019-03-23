@@ -32,7 +32,8 @@ module.exports = function (app) {
 
   // this one may or may not work, needs to be tested! Different from example
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    res.json("/user");
+    console.log(req.user.id);
+    res.json("/user/" + req.user.id);
   });
 
   // Route for getting some data about our user to be used client side
@@ -54,10 +55,11 @@ module.exports = function (app) {
   });
 
   app.get("/api/:score", function (req) {
+    var userId = req.user.id;
     db.quizScore.create(
       {
         score: req.params.score,
-        userId: req.user.id
+        userId: userId
       }
     ).then(function () {
       window.location.href = "/user";

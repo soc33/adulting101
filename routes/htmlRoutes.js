@@ -27,32 +27,28 @@ module.exports = function (app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/user", isAuthenticated, function (req, res) {
-    db.quizScore
-      .findAll({ where: { userId: req.user.id } })
-      .then(function (dbUserScores) {
-        // for loop is ok through quizzes object 
-        res.render("index", {
-
-
-        });
-      });
-  });
+  // app.get("/user", isAuthenticated, function (req, res) {
+  //   db.quizScore
+  //     .findAll({ where: { userId: req.user.id } })
+  //     .then(function (dbUserScores) {
+  //       // for loop is ok through quizzes object 
+  //       res.render("index", {
+  //       });
+  //     });
+  // });
 
   // home route loads home.html
-  app.get("/", isAuthenticated, function (req, res) {
-    db.quizScore.findAll({ where: { userId: req.user.id } }).then(function (scores) {
+  app.get("/user/:id", function (req, res) {
+    db.quizScore.findAll({ where: { userId: req.params.id } }).then(function (scores) {
       var scoreObject = {
         scores: scores
       }
-      res.render("index", scoreObject, {
-        msg: "Welcome " + req.user.username + "!",
-      });
+      res.render("index", scoreObject);
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("quiz/:quizId", function (req, res) {
+  app.get("/quiz/:quizId", function (req, res) {
     db.quizQuestion
       .findAll({ where: { quizId: req.params.quizId } })
       .then(function (dbquiz) {
