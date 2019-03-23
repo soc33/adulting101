@@ -1,8 +1,11 @@
+/* font-family: 'Patua One', cursive;
+font-family: 'Roboto', sans-serif; */
+
 body {
   margin: auto;
-  font-family: 'Lalezar', cursive;
+  font-family: 'Roboto', sans-serif;
   color: black;
-  background-image: url("../../public/images/back.jpg");
+  background-color: whitesmoke;
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -11,17 +14,21 @@ body {
 }
 
 .jumbotron {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 80px;
-  padding: 0;
-  margin: 0 auto;
-  background-color: transparent;
+  font-family: 'Patua One', cursive;
+  background-color: paleturquoise;
 }
 
+.form-group {
+  text-align: left;
+}
+
+.btn {
+  font-size: 18px;
+}
 
 /* index page */
-#exampleInputEmail1{
-width: 325px;
+#exampleInputEmail1 {
+  width: 325px;
 }
 
 .form-group{
@@ -35,16 +42,15 @@ width: 325px;
 
 /* index and user page */
 #iconBtn {
-margin: auto;
-border: solid 1px black;
+  margin: auto;
+  border: solid 1px black;
 }
 
 .box {
-background-color: transparent;
-border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .list-group-item {
-line-height: 2.5;
+  line-height: 2.5;
 }
-
